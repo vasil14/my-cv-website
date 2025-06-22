@@ -12,22 +12,22 @@ export const Sidebar = styled.div`
 `;
 
 export const ToggleButton = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ffffff;
-    font-size: 26px;
-    color: black;
-    height: 70px;
-    width: 75px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  
-    &:hover {
-    color: #4caf50;
-    transition: color 0.2s ease-in-out;
-  `;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  font-size: 26px;
+  color: black;
+  height: 70px;
+  width: 75px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+  &:hover {
+  color: #4caf50;
+  transition: color 0.2s ease-in-out;
+`;
 
 export const Menu = styled.ul`
   list-style: none;
@@ -58,6 +58,12 @@ export const MenuItem = styled.li`
   &.active {
     color: #4caf50;
   }
+
+  // Green color for active state
+  // &.active {
+  //   background: #4caf50;
+  //   color: white;
+  // }
 
   &:first-child {
     border-top: none;
