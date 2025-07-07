@@ -5,9 +5,9 @@ export const Sidebar = styled.div`
   top: 15px;
   border-radius: 10px;
   padding: 12px 0;
-  width: 60px;
   text-align: center;
   z-index: 1000;
+  margin-right: 10px;
 `;
 
 export const ToggleButton = styled.div`

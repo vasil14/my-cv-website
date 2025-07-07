@@ -3,20 +3,25 @@ import VerticalSidebar from "./components/Sidebar";
 import Profile from "./components/profile";
 
 const MainContainer = styled.div`
+  position: relative;
+  height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  overflow: hidden;
 `;
 
 const ContentContainer = styled.div`
   display: flex;
-  gap: 10px;
-  max-width: 1280px;
+  margin: 8vh 6vw;
+  position: relative;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-height: 700px;
-  height: 100%;
-  color: #333;
+  height: 84vh;
+  max-width: 1268px;
+  max-height: 674px;
 `;
 
 const Sidebar = styled.div``;
