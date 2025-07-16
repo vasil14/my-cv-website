@@ -1,5 +1,4 @@
-// Typewriter.js
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const TextWrapper = styled.div`
@@ -8,7 +7,8 @@ const TextWrapper = styled.div`
   white-space: nowrap;
   overflow: hidden;
   width: fit-content;
-  color: #4caf50;
+  color: white;
+  min-height: 30px;
 `;
 
 const Typewriter = ({ texts = [] }) => {

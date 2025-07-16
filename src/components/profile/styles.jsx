@@ -15,7 +15,7 @@ export const ProfileWrapper = styled.div`
 `;
 
 export const PrifileContainer = styled.div`
-  padding: 50px;
+  padding: 70px;
   position: relative;
   left: 0%;
   width: 100%;
@@ -63,9 +63,86 @@ export const ProfileImage = styled.div`
 `;
 
 export const ProfileName = styled.div`
-  margin-top: 100px;
+  margin-top: 200px;
   font-size: xx-large;
   color: white;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
+`;
+
+export const SocialLinksWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 20px;
+`;
+
+export const SocialLink = styled.a`
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #4caf50;
+  }
+`;
+
+export const LinksWrapper = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0.5px;
+    width: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0)
+    );
+  }
+`;
+
+export const Link = styled.a`
+  color: white;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transition: color 0.3s;
+  position: relative; /* required for ::after */
+
+  &:hover {
+    color: #4caf50;
+  }
+
+  ${(props) =>
+    props.$showRightBorder &&
+    `
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0.5px;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.2
+          ),
+          rgba(255, 255, 255, 0)
+        );
+      }
+    `}
 `;
