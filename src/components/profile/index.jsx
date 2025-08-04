@@ -56,7 +56,7 @@ const Profile = () => {
           </SocialLink>
         </SocialLinksWrapper>
         <LinksWrapper>
-          <Link href="/pdf/CV-Vasil_Vangjeli.pdf" $showRightBorder download>
+          <Link href="./pdf/CV-Vasil_Vangjeli.pdf" $showRightBorder download>
             Download CV
           </Link>
           <Link>Contact Me</Link>
