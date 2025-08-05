@@ -1,37 +1,59 @@
-import styled from "styled-components";
+import { useState } from "react";
 import VerticalSidebar from "./components/Sidebar";
 import Profile from "./components/profile";
-
-const MainContainer = styled.div`
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-`;
-
-const ContentContainer = styled.div`
-  display: flex;
-  margin: 8vh 6vw;
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 84vh;
-  max-width: 1268px;
-  max-height: 674px;
-`;
-
-const Sidebar = styled.div``;
+import AboutMe from "./components/AboutMe";
+import Resume from "./components/Resume";
+import MyWork from "./components/MyWork";
+import Contact from "./components/Contact";
+import { ContentContainer, MainContainer } from "./styles";
 
 export default function App() {
+  const [activeSection, setActiveSection] = useState("ABOUT");
+  const [prevSection, setPrevSection] = useState(null);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleSectionChange = (newSection) => {
+    if (newSection === activeSection || isAnimating) return;
+
+    setPrevSection(activeSection);
+    setActiveSection(newSection);
+    setIsAnimating(true);
+
+    setTimeout(() => {
+      setPrevSection(null);
+      setIsAnimating(false);
+    }, 500); // match animation duration
+  };
+
+  const getComponent = (section, animationType) => {
+    switch (section) {
+      case "ABOUT":
+        return <AboutMe animationType={animationType} />;
+      case "RESUME":
+        return <Resume animationType={animationType} />;
+      case "MY WORK":
+        return <MyWork animationType={animationType} />;
+      case "CONTACT":
+        return <Contact animationType={animationType} />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <MainContainer>
       <ContentContainer>
-        <VerticalSidebar />
+        <VerticalSidebar
+          setActiveSection={handleSectionChange}
+          active={activeSection}
+        />
         <Profile />
+
+        {/* Old component with fadeOut */}
+        {prevSection && getComponent(prevSection, "out")}
+
+        {/* New component with fadeIn */}
+        {getComponent(activeSection, prevSection ? "in" : "none")}
       </ContentContainer>
     </MainContainer>
   );

@@ -8,6 +8,7 @@ export const ProfileWrapper = styled.div`
   display: flex;
   background-color: #31313a;
   border-radius: 5px;
+  z-index: 10;
 
   box-shadow: -15px -15px 0px 1px rgb(37, 37, 43);
   -webkit-box-shadow: -15px -15px 0px 1px rgb(37, 37, 43);

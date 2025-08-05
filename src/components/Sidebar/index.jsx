@@ -8,9 +8,7 @@ import {
   UserIcon,
 } from "@phosphor-icons/react";
 
-const VerticalSidebar = () => {
-  const [active, setActive] = useState("ABOUT");
-
+const VerticalSidebar = ({ active, setActiveSection }) => {
   const menuItems = [
     { label: "ABOUT", icon: <UserIcon size={25} /> },
     { label: "RESUME", icon: <FileTextIcon size={25} /> },
@@ -28,7 +26,7 @@ const VerticalSidebar = () => {
           <MenuItem
             key={item.label}
             className={active === item.label ? "active" : ""}
-            onClick={() => setActive(item.label)}
+            onClick={() => setActiveSection(item.label)}
           >
             {item.icon}
             <Label>{item.label}</Label>
