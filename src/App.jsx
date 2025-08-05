@@ -1,6 +1,6 @@
 import { useState } from "react";
 import VerticalSidebar from "./components/Sidebar";
-import Profile from "./components/profile";
+import Profile from "./components/Profile";
 import AboutMe from "./components/AboutMe";
 import Resume from "./components/Resume";
 import MyWork from "./components/MyWork";
