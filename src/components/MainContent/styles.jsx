@@ -8,6 +8,7 @@ export const ContentContainer = styled.div`
   left: 565px;
   right: 0;
   background: #31313a;
+  overflow: auto;
   transition: transform 0.8s ease, opacity 0.8s ease;
   z-index: ${({ $isActive }) => ($isActive ? 2 : 0)};
   pointer-events: ${({ $isActive }) => ($isActive ? "auto" : "none")};
