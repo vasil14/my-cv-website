@@ -1,8 +1,8 @@
 import MainContent from "../MainContent";
 
-const Resume = ({ animationType }) => {
+const Resume = ({ isActive }) => {
   return (
-    <MainContent title="Resume" animationType={animationType}>
+    <MainContent title="Resume" isActive={isActive}>
       <h1>Resume Content Here</h1>
     </MainContent>
   );

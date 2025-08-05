@@ -9,51 +9,21 @@ import { ContentContainer, MainContainer } from "./styles";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("ABOUT");
-  const [prevSection, setPrevSection] = useState(null);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  const handleSectionChange = (newSection) => {
-    if (newSection === activeSection || isAnimating) return;
-
-    setPrevSection(activeSection);
-    setActiveSection(newSection);
-    setIsAnimating(true);
-
-    setTimeout(() => {
-      setPrevSection(null);
-      setIsAnimating(false);
-    }, 500); // match animation duration
-  };
-
-  const getComponent = (section, animationType) => {
-    switch (section) {
-      case "ABOUT":
-        return <AboutMe animationType={animationType} />;
-      case "RESUME":
-        return <Resume animationType={animationType} />;
-      case "MY WORK":
-        return <MyWork animationType={animationType} />;
-      case "CONTACT":
-        return <Contact animationType={animationType} />;
-      default:
-        return null;
-    }
-  };
 
   return (
     <MainContainer>
       <ContentContainer>
         <VerticalSidebar
-          setActiveSection={handleSectionChange}
+          setActiveSection={setActiveSection}
           active={activeSection}
         />
         <Profile />
 
-        {/* Old component with fadeOut */}
-        {prevSection && getComponent(prevSection, "out")}
-
-        {/* New component with fadeIn */}
-        {getComponent(activeSection, prevSection ? "in" : "none")}
+        {/* All components rendered, only one is visible */}
+        <AboutMe isActive={activeSection === "ABOUT"} />
+        <Resume isActive={activeSection === "RESUME"} />
+        <MyWork isActive={activeSection === "MY WORK"} />
+        <Contact isActive={activeSection === "CONTACT"} />
       </ContentContainer>
     </MainContainer>
   );

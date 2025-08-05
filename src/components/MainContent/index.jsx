@@ -1,8 +1,8 @@
 import { ContentContainer, ContentWrapper, TitleHeader } from "./styles";
 
-const MainContent = ({ title, children, animationType }) => {
+const MainContent = ({ title, children, isActive }) => {
   return (
-    <ContentContainer $animationType={animationType}>
+    <ContentContainer $isActive={isActive}>
       <ContentWrapper>
         <TitleHeader>{title}</TitleHeader>
         {children}

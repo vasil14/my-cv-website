@@ -2,38 +2,18 @@ import styled, { css } from "styled-components";
 import { fadeInLeft, fadeOutLeft } from "../../styles";
 
 export const ContentContainer = styled.div`
-  transform: translate3d(0px, 0px, 0px);
-  opacity: 1;
-
-  padding: 0;
   position: absolute;
-  overflow: hidden;
-  left: 565px;
-  right: 0;
   top: 15px;
   bottom: 15px;
-  width: auto;
-  height: auto;
+  left: 565px;
+  right: 0;
   background: #31313a;
-  z-index: ${({ $animationType }) => ($animationType === "in" ? 9 : 8)};
-  pointer-events: none;
-
-  ${({ $animationType }) => {
-    switch ($animationType) {
-      case "in":
-        return css`
-          animation: ${fadeInLeft} 1s ease forwards;
-        `;
-      case "out":
-        return css`
-          animation: ${fadeOutLeft} 1s ease forwards;
-        `;
-      default:
-        return css`
-          opacity: 1;
-        `;
-    }
-  }}
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  z-index: ${({ $isActive }) => ($isActive ? 2 : 0)};
+  pointer-events: ${({ $isActive }) => ($isActive ? "auto" : "none")};
+  transform: ${({ $isActive }) =>
+    $isActive ? "translate3d(0, 0, 0)" : "translate3d(-300px, 0, 0)"};
+  opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
 `;
 
 export const ContentWrapper = styled.div`

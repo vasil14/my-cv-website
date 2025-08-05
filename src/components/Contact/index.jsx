@@ -1,8 +1,8 @@
 import MainContent from "../MainContent";
 
-const Contact = ({ animationType }) => {
+const Contact = ({ isActive }) => {
   return (
-    <MainContent title="Contact" animationType={animationType}>
+    <MainContent title="Contact" isActive={isActive}>
       <h1>Contact Content Here</h1>
     </MainContent>
   );
