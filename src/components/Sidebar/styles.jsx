@@ -14,7 +14,7 @@ export const ToggleButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ffffff;
+  background: #31313a;
   font-size: 26px;
   color: black;
   height: 70px;
@@ -22,6 +22,7 @@ export const ToggleButton = styled.div`
   cursor: pointer;
   border-radius: 5px;
   margin-bottom: 20px;
+  color: #ffffffd9;
 
   &:hover {
   color: #4caf50;
@@ -32,7 +33,7 @@ export const Menu = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-  background: #ffffff;
+  background: #31313a;
   border-radius: 5px;
   width: 75px;
 `;
@@ -42,12 +43,11 @@ export const MenuItem = styled.li`
   flex-direction: column;
   align-items: center;
   padding: 15px 5px;
-  color: black;
-
+  color: #ffffffd9;
   cursor: pointer;
   transition: background 0.2s ease-in-out;
 
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #4e4e56ff;
 
   &:hover {
     color: #4caf50;
