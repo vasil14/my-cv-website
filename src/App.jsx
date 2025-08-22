@@ -8,7 +8,7 @@ import Contact from "./components/Contact";
 import { ContentContainer, MainContainer } from "./styles";
 
 export default function App() {
-  const [activeSection, setActiveSection] = useState("ABOUT");
+  const [activeSection, setActiveSection] = useState("about-me");
 
   return (
     <MainContainer>
@@ -20,10 +20,10 @@ export default function App() {
         <Profile />
 
         {/* All components rendered, only one is visible */}
-        <AboutMe isActive={activeSection === "ABOUT"} />
-        <Resume isActive={activeSection === "RESUME"} />
-        <MyWork isActive={activeSection === "MY WORK"} />
-        <Contact isActive={activeSection === "CONTACT"} />
+        <AboutMe isActive={activeSection === "about-me"} />
+        <Resume isActive={activeSection === "resume"} />
+        <MyWork isActive={activeSection === "my-work"} />
+        <Contact isActive={activeSection === "contact"} />
       </ContentContainer>
     </MainContainer>
   );

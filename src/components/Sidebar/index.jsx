@@ -23,15 +23,12 @@ const VerticalSidebar = ({ active, setActiveSection }) => {
       <Menu>
         {menuItems.map((item) => (
           <MenuItem
-            key={item.label}
-            className={active === item.label ? "active" : ""}
+            key={item.id}
+            className={active === item.id ? "active" : ""}
             onClick={() => {
-              setActiveSection(item.label);
+              setActiveSection(item.id);
 
               const section = document.getElementById(item.id);
-
-              console.log(item.id);
-              console.log(section);
 
               if (section) {
                 section.scrollIntoView({
