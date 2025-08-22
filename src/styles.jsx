@@ -20,6 +20,14 @@ export const ContentContainer = styled.div`
   height: 84vh;
   max-width: 1268px;
   max-height: 674px;
+
+  @media (max-width: 1024px) {
+    margin: 0 auto;
+    padding: 0 15px 0 100px;
+    width: auto;
+    max-width: 700px;
+    max-height: initial;
+  }
 `;
 
 export const fadeInLeft = keyframes`

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Label, Menu, MenuItem, Sidebar, ToggleButton } from "./styles";
 import {
   AtIcon,

@@ -8,6 +8,12 @@ export const Sidebar = styled.div`
   text-align: center;
   z-index: 1000;
   margin-right: 10px;
+
+  @media (max-width: 1024px) {
+    position: fixed;
+    top: unset;
+    margin-left: -85px;
+  }
 `;
 
 export const ToggleButton = styled.div`
