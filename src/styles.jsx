@@ -31,6 +31,14 @@ export const ContentContainer = styled.div`
     gap: 15px;
     height: 100%;
   }
+
+  @media (max-width: 560px) {
+    top: 64px;
+    padding: 0 40px 0 40px;
+    margin: 0 auto;
+    height: 100%;
+    // max-width: 450px;
+  }
 `;
 
 export const fadeInLeft = keyframes`

@@ -14,6 +14,18 @@ export const Sidebar = styled.div`
     top: 25px;
     margin-left: -85px;
   }
+
+  @media (max-width: 560px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 45px;
+  }
 `;
 
 export const ToggleButton = styled.div`
@@ -30,9 +42,13 @@ export const ToggleButton = styled.div`
   margin-bottom: 20px;
   color: #ffffffd9;
 
+  @media (max-width: 560px) {
+    display: none !important;
+  }
+
   &:hover {
   color: #4caf50;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;  
 `;
 
 export const Menu = styled.ul`
@@ -42,6 +58,15 @@ export const Menu = styled.ul`
   background: #31313a;
   border-radius: 5px;
   width: 75px;
+
+  @media (max-width: 560px) {
+    flex-direction: row;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    height: 65px;
+  }
 `;
 
 export const MenuItem = styled.li`
@@ -54,6 +79,14 @@ export const MenuItem = styled.li`
   transition: background 0.2s ease-in-out;
 
   border-top: 1px solid #4e4e56ff;
+
+  @media (max-width: 560px) {
+    // display: block;
+    width: 100%;
+
+    border-top: none;
+    border-left: 1px solid #4e4e56ff;
+  }
 
   &:hover {
     color: #4caf50;
