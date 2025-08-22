@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { fadeInLeft, fadeOutLeft } from "../../styles";
 
 export const ContentContainer = styled.div`
   position: absolute;
@@ -15,6 +14,20 @@ export const ContentContainer = styled.div`
   transform: ${({ $isActive }) =>
     $isActive ? "translate3d(0, 0, 0)" : "translate3d(-300px, 0, 0)"};
   opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
+
+  @media (max-width: 1024px) {
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    overflow: visible;
+    width: auto;
+    max-width: unset;
+    max-height: initial;
+    margin: 0 auto;
+    transform: translate3d(0, 0, 0);
+    border-radius: 5px;
+  }
 `;
 
 export const ContentWrapper = styled.div`

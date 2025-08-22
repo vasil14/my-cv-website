@@ -4,7 +4,8 @@ export const ProfileWrapper = styled.div`
   position: relative;
   float: left;
   height: 100%;
-  width: 480px;
+  max-width: 480px;
+  width: 100%;
   display: flex;
   background-color: #31313a;
   border-radius: 5px;
@@ -13,6 +14,11 @@ export const ProfileWrapper = styled.div`
   box-shadow: -15px -15px 0px 1px rgb(37, 37, 43);
   -webkit-box-shadow: -15px -15px 0px 1px rgb(37, 37, 43);
   -moz-box-shadow: -15px -15px 0px 1px rgb(37, 37, 43);
+
+  @media (max-width: 1024px) {
+    max-width: unset;
+    height: auto;
+  }
 `;
 
 export const PrifileContainer = styled.div`

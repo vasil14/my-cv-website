@@ -24,9 +24,11 @@ export const ContentContainer = styled.div`
   @media (max-width: 1024px) {
     margin: 0 auto;
     padding: 0 15px 0 100px;
-    width: auto;
-    max-width: 700px;
-    max-height: initial;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    gap: 15px;
   }
 `;
 
