@@ -29,6 +29,7 @@ export const ContentContainer = styled.div`
     flex-direction: column;
     overflow-x: auto;
     gap: 15px;
+    height: 100%;
   }
 `;
 

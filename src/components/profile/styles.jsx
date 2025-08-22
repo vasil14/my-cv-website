@@ -18,6 +18,8 @@ export const ProfileWrapper = styled.div`
   @media (max-width: 1024px) {
     max-width: unset;
     height: auto;
+    min-height: 600px;
+    margin-top: 35px;
   }
 `;
 

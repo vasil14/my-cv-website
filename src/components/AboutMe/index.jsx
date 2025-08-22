@@ -16,6 +16,7 @@ const ServicesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  gap: 5px;
 `;
 
 const ServiceBlock = styled.div`
@@ -25,49 +26,48 @@ const ServiceBlock = styled.div`
   align-items: center;
   text-align: center;
   padding: 20px;
-  width: 50%;
+  width: 47%;
   box-sizing: border-box; /* ensures padding/border don't break layout */
   // border-right: 1px solid #4caf50;
   // border-bottom: 1px solid #4caf50;
 
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   width: 0.5px;
-  //   height: 100%;
-  //   background: linear-gradient(
-  //     to bottom,
-  //     rgba(255, 255, 255, 0),
-  //     rgba(255, 255, 255, 0.2),
-  //     rgba(255, 255, 255, 0)
-  //   );
-  // }
+  &:nth-child(even)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.5px;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0)
+    );
+  }
 
-  // &::after {
-  //   content: "";
-  //   position: absolute;
-  //   top: 0;
-  //   right: 0;
-  //   width: 0.5px;
-  //   height: 100%;
-  //   background: linear-gradient(
-  //     to bottom,
-  //     rgba(255, 255, 255, 0),
-  //     rgba(255, 255, 255, 0.2),
-  //     rgba(255, 255, 255, 0)
-  //   );
-  // }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 0.5px;
+    width: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0)
+    );
+  }
 
   /* Remove double borders in the middle */
-  // &:nth-child(odd) {
-  //   border-right: none;
-  // }
+  &:nth-child(odd) {
+    border-right: none;
+  }
 
   @media (max-width: 1024px) {
-    width: 100%;
-    border-right: 1px solid #4caf50; /* restore border for single column */
+    width: 50%;
   }
 
   svg,
@@ -109,7 +109,7 @@ const AboutMe = ({ isActive }) => {
   }
 
   return (
-    <MainContent title="About Me" isActive={isActive}>
+    <MainContent id="about-me" title="About Me" isActive={isActive}>
       <ShortDescription>
         I'm Vasil, a {age} year old Full-Stack Developer based in Tirana,
         Albania. I specialize in PHP, Laravel, React, and WordPress, with a

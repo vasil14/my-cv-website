@@ -1,8 +1,8 @@
 import { ContentContainer, ContentWrapper, TitleHeader } from "./styles";
 
-const MainContent = ({ title, children, isActive }) => {
+const MainContent = ({ title, children, isActive, id }) => {
   return (
-    <ContentContainer $isActive={isActive}>
+    <ContentContainer id={id} $isActive={isActive}>
       <ContentWrapper>
         <TitleHeader>{title}</TitleHeader>
         {children}

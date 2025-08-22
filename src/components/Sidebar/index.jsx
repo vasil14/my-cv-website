@@ -9,10 +9,10 @@ import {
 
 const VerticalSidebar = ({ active, setActiveSection }) => {
   const menuItems = [
-    { label: "ABOUT", icon: <UserIcon size={25} /> },
-    { label: "RESUME", icon: <FileTextIcon size={25} /> },
-    { label: "MY WORK", icon: <CodeIcon size={25} /> },
-    { label: "CONTACT", icon: <AtIcon size={25} /> },
+    { id: "about-me", label: "ABOUT ME", icon: <UserIcon size={25} /> },
+    { id: "resume", label: "RESUME", icon: <FileTextIcon size={25} /> },
+    { id: "my-work", label: "MY WORK", icon: <CodeIcon size={25} /> },
+    { id: "contact", label: "CONTACT", icon: <AtIcon size={25} /> },
   ];
 
   return (
@@ -25,7 +25,21 @@ const VerticalSidebar = ({ active, setActiveSection }) => {
           <MenuItem
             key={item.label}
             className={active === item.label ? "active" : ""}
-            onClick={() => setActiveSection(item.label)}
+            onClick={() => {
+              setActiveSection(item.label);
+
+              const section = document.getElementById(item.id);
+
+              console.log(item.id);
+              console.log(section);
+
+              if (section) {
+                section.scrollIntoView({
+                  behavior: "smooth", // smooth scroll
+                  block: "start", // align to top
+                });
+              }
+            }}
           >
             {item.icon}
             <Label>{item.label}</Label>

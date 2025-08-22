@@ -11,7 +11,7 @@ export const Sidebar = styled.div`
 
   @media (max-width: 1024px) {
     position: fixed;
-    top: unset;
+    top: 25px;
     margin-left: -85px;
   }
 `;
