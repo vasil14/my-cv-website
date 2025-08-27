@@ -17,14 +17,13 @@ export const Sidebar = styled.div`
 
   @media (max-width: 560px) {
     position: fixed;
-    top: 0;
+    top: unset;
+    bottom: 0;
     left: 0;
-    right: 0;
     padding: 0;
     margin: 0;
     z-index: 1000;
     width: 100%;
-    height: 45px;
   }
 `;
 
@@ -38,17 +37,27 @@ export const ToggleButton = styled.div`
   height: 70px;
   width: 75px;
   cursor: pointer;
-  border-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   margin-bottom: 20px;
   color: #ffffffd9;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 0;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
 
   @media (max-width: 560px) {
     display: none !important;
   }
 
   &:hover {
-  color: #4caf50;
-  transition: color 0.2s ease-in-out;  
+    color: #4caf50;
+    transition: color 0.2s ease-in-out;
+  }
 `;
 
 export const Menu = styled.ul`
@@ -56,8 +65,17 @@ export const Menu = styled.ul`
   margin: 0;
   padding: 0;
   background: #31313a;
-  border-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   width: 75px;
+
+  @media (max-width: 1024px) {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top: 1px solid #4e4e56ff;
+  }
 
   @media (max-width: 560px) {
     flex-direction: row;
@@ -103,8 +121,10 @@ export const MenuItem = styled.li`
   //   color: white;
   // }
 
-  &:first-child {
-    border-top: none;
+  @media (max-width: 1024px) {
+    &:first-child {
+      border-top: none;
+    }
   }
 `;
 

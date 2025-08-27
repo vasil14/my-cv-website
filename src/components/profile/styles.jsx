@@ -18,8 +18,13 @@ export const ProfileWrapper = styled.div`
   @media (max-width: 1024px) {
     max-width: unset;
     height: auto;
-    min-height: 600px;
+    min-height: 500px;
     margin-top: 35px;
+  }
+
+  @media (max-width: 560px) {
+    min-height: unset;
+    height: auto;
   }
 `;
 
@@ -78,6 +83,9 @@ export const ProfileName = styled.div`
   color: white;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
+
+  @media (max-width: 560px) {
+    font-size: x-large;
 `;
 
 export const SocialLinksWrapper = styled.div`

@@ -33,11 +33,10 @@ export const ContentContainer = styled.div`
   }
 
   @media (max-width: 560px) {
-    top: 64px;
     padding: 0 40px 0 40px;
     margin: 0 auto;
     height: 100%;
-    // max-width: 450px;
+    max-height: unset;
   }
 `;
 
